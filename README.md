@@ -20,7 +20,6 @@ Make sure you have the following installed and configured:
 - **SonarQube Server** (Running on a separate server or as a Docker container)
 - **Nexus Repository Manager** (Configured to store artifacts)
 - **Nginx** (For reverse proxy and deployment)
-- **GitHub Repository** (For source code management)
 - **EC2 Instance / Vagrant VM** (To host the Node.js app)
 
 ## 📂 Folder Structure
@@ -30,7 +29,6 @@ Make sure you have the following installed and configured:
  ┣ 📂 tests            # Unit & Integration Tests
  ┣ 📜 Jenkinsfile      # Jenkins Pipeline as Code
  ┣ 📜 sonar-project.properties  # SonarQube Config
- ┣ 📜 Dockerfile       # Containerization Setup (Optional)
  ┣ 📜 nginx.conf       # Nginx Configuration
  ┣ 📜 package.json     # Node.js Dependencies
  ┗ 📜 README.md        # Project Documentation

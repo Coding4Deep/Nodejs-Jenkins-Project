@@ -6,7 +6,8 @@
   "scripts": {
     "clean": "rm -rf node_modules package-lock.json",
     "test": "nyc --reporter=lcov jest --coverage",
-    "sonar": "sonar-scanner",
+    "sonar": "sonar-scanner" ,
+    
     "coverage": "nyc --reporter=lcov --reporter=text npm test"
   },
   "devDependencies": {

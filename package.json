@@ -4,6 +4,7 @@
   "description": "Node.js project with Jest, NYC, and SonarQube",
   "main": "index.js",
   "scripts": {
+    "clean": "rm -rf node_modules package-lock.json",
     "test": "nyc --reporter=lcov jest --coverage",
     "sonar": "sonar-scanner",
     "coverage": "nyc --reporter=lcov --reporter=text npm test"

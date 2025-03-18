@@ -1,0 +1,23 @@
+node{
+    def nodeTool = tool name: 'NodeJS'
+    def scannerTool = tool name: 'sonarscanner' 
+    env.PATH = "${scannerTool}/bin:${env.PATH}" 
+
+    
+    stage('checkout'){
+         git branch: 'main', url: 'https://github.com/Coding4Deep/Nodejs-Jenkins-Project.git'
+
+        }	
+    
+            stage('test'){
+            sh "${nodeTool}/bin/npm install"
+            sh "${nodeTool}/bin/npm test"
+                }
+
+            stage('SonarQube'){
+                withSonarQubeEnv('SonarQube') {
+                    
+                    sh " sonar-scanner"
+                   }
+                 }
+}

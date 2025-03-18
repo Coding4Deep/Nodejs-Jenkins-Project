@@ -1,0 +1,40 @@
+pipeline {
+    agent any
+
+    tools {
+        nodejs 'NodeJS'
+    }
+   
+
+    stages {
+        stage('Checkout') {
+            steps {
+                git branch: 'main', url: 'https://github.com/Coding4Deep/Nodejs-Jenkins-Project.git'
+            }
+        }
+
+        stage('Install') {
+            steps {
+                script {
+                    // Wrap the install step with timestamps to track time in logs
+                    timestamps {
+                        sh 'npm install'
+                    }
+                }
+            }
+        }
+        
+        
+        stage('test'){
+            steps{
+                sh 'npm test'
+            }
+        }
+           stage('SonarQube Analysis') {
+            steps {
+                withSonarQubeEnv('SonarQube') { 
+                    sh 'npm run sonar'
+                }
+            }
+        }
+        

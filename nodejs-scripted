@@ -15,7 +15,7 @@ node{
                 }
 
             stage('SonarQube'){
-                withSonarQubeEnv('SonarQube') {
+                withSonarQubeEnv('sonar-local') {
                     
                     sh " sonar-scanner"
                    }
